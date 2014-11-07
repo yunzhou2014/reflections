@@ -1,0 +1,15 @@
+What happens when you initialize a repository? Why do you need to do it?
+	
+	a .git folder is created. Because I need to create a repository?
+
+git init
+git add
+git commit
+(git reset   // remove file from staging area)
+git status
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+	it is between the two statuses. You can think twice before you commit changes.
+	
+
