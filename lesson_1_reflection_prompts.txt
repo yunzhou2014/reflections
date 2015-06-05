@@ -13,7 +13,7 @@ commit, like you do in Git, vs having versions automatically saved, like Google
 docs does?
     
     pros: you get to decide when is appropriate to commit.
-	cons: you might have too big/ small commits.
+    cons: you might have too big/ small commits.
 
 Why do you think some version control systems, like Git, allow saving multiple
 files in one commit, while others, like Google Docs, treat each file separately?
@@ -23,8 +23,8 @@ files in one commit, while others, like Google Docs, treat each file separately?
 How can you use the commands git log and git diff to view the history of files?
     
     git log + downarrow to find the id corresponding to a message, press q to quit. then git diff first_id second_id to find the difference (+ add, - delete)
-	
-	git config --global color.ui auton to get colored diff output
+    
+    git config --global color.ui auto to get colored diff output
 
 How might using version control make you more confident to make changes that
 could break something?

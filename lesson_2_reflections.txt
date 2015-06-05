@@ -1,6 +1,6 @@
 What happens when you initialize a repository? Why do you need to do it?
-	
-	a .git folder is created. Because I need to create a repository?
+    
+    a .git folder is created. Because I need to create a repository?
 
 git init
 git add
@@ -10,6 +10,55 @@ git status
 
 How is the staging area different from the working directory and the repository? What value do you think it offers?
 
-	it is between the two statuses. You can think twice before you commit changes.
-	
+    it is between the two statuses. You can think twice before you commit changes.
+    
+git diff  (working directory vs staging area)
+git diff --staged (staging area vs repository)
+git diff commit1 commit2
 
+git reset --hard (discard changes in working directory and staging area)
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+    use git diff often to check the difference between working directory and staging area
+    
+git branch (show current branch as *curBranch)
+git branch name
+git checkout easy-mode
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+    you want to add an experimental feature, or make a different version(Italian version). It would be helpful to create a branch of these changes. You can switch between the working master version and the version you are currently trying.
+    context switch
+    production/development/experimental/unique feature branches
+    
+git log --graph --oneline master coins
+git checkout -b new_branch_name (git branch new_branch name/ git checkout new_branch_name)
+
+How do the diagrams help you visualize the branch structure?
+
+    you can keep track of which branches contain which commits
+    
+If a branch is deleted and leaves some commits unreachable from existing branches, those commits will continue to be accessible by commit id, until Git¡¯s garbage collection runs. This will happen automatically from time to time, unless you actively turn it off. You can also run this process manually with git gc.
+
+git merge branch2 branch3
+if you have branch1 checked out, but you run the cmd above, the merged version will combine branch1 as well as branch2 and branch3. You should always checkout one of the two branches you're planning on merging before doing the merge.
+
+If you want to merge branch2 into branch1, you can simply do
+git checkout branch1
+git merge branch2
+
+git show commit_id // compare a commit to its parent
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+    Merge all the specified branches into the currently checked out branch, creating new commit for that branch. So we can tell which commits come from which branch.
+    
+What are the pros and cons of Git's automatic merging vs. always doing merges manually?
+
+Git's automatic merging
+    pros: It will encompass all the commits from each branch you are merging.
+    cons: Might have conflicts, so you have to resolve them, and sometimes, the conflict indication will get confusing.
+Always doing merges manually    
+    pros: If two people made the same change on a function, they can discuss it and merge it perfectly.
+    cons: Time consuming.
