@@ -1,3 +1,39 @@
 When would you want to use a remote repository rather than keeping all your work local?
 
   when I want to share my code with others. Mostly for collaboration.
+
+Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+
+    changes may introduce conflicts. If I have some experimental changes in my local machine, a git pull may mess up with my local changes.
+    
+git remote add origin url
+git remote -v // show the remote repo
+git push origin master
+git pull origin master
+
+Describe the differences between forks, clones, and branches. When would you use one instead of another?
+
+    forks: clone a repo on GitHub
+    clones: clone a repo from GitHub to local machine, or clone a repo between local machines
+    branches: inside a repo, add a new branch
+    
+    forks: when I want to add new feature on an existing remote repo, I can fork it to my own remote repo first
+    clones: and then clone it to my local machine and add my new feature
+    branch: when I want to make experimetal changes without affecting the master branch
+    
+git fetch origin + git merge master origin/master = git pull origin master
+
+What is the benefit of having a copy of the last known state of the remote stored locally?
+
+    So both repos are in sync. And you can jump right into work even you haven't worked on it for a long time without worrying about some features are missing. Or another scenario would be you go ahead and make some changes, then you discover that your local repo is not in sync with the remote repo, and you have to fix all the conflicts.
+
+How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+    We may work on different parts of a project, and when we decide to integrate, we sit down together and copy all the files into one machine and start going through the code and integrate.
+    This way conflicts are resolved instantly. However, we may find ourselves manually checking if two files created by two people are the same, and we might have many duplicated code.
+
+When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+
+    When I want to make experimental changes, if doing it in a separate branch, it won't affect the master branch. And you can easily keep your master branch up-to-date with master of the original repository, and merge changes from master into your branch when you are ready. However, this may introduce more steps to merge my branch into the master. The typical work flow is pull changes into local master branch, merge the local master into your branch, then push your branch to the remote before finally merging your branch into master, either locally or on GitHub.
+    
+    Whereas, operates only on master, you can simple do pushing and pulling. However, in certain cases, you might create unwanted commits or changes on the local master branch.
