@@ -1,6 +1,6 @@
 What happens when you initialize a repository? Why do you need to do it?
     
-    a .git folder is created. Because I need to create a repository?
+    a hidden .git folder which contains the required files for version history is created. Without a repository, git cannot do anything. Git only works on git repositories.
 
 git init
 git add
@@ -20,7 +20,7 @@ git reset --hard (discard changes in working directory and staging area)
 
 How can you use the staging area to make sure you have one commit per logical change?
 
-    use git diff often to check the difference between working directory and staging area
+    use git diff often to check the difference between working directory and staging area. You check the stagin area and decide which files should be part of the commit and which not.
     
 git branch (show current branch as *curBranch)
 git branch name
@@ -62,3 +62,16 @@ Git's automatic merging
 Always doing merges manually    
     pros: If two people made the same change on a function, they can discuss it and merge it perfectly.
     cons: Time consuming.
+
+Commands:
+git init
+git reset // remove file from staging area
+git checkout master/coins
+git log --graph --oneline master coins // see the visual representation of the commit history
+git gc // run Git's grabage collection
+git merge --abort
+git branch -d branchname // remove the branch with the specified name
+Newline characters between Windows and Unix systems
+Unix systems adds one character called the "line feed" character or LF or \n while Windows systems adds two characters, "carriage return" and "line feed" or CRLF or \r\n.
+git config --global core.autocrlf true
+git show commitID // compare a commit to its parent, it works even after merging

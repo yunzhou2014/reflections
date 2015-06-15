@@ -7,7 +7,7 @@ Why might you want to always pull changes manually rather than having Git automa
     changes may introduce conflicts. If I have some experimental changes in my local machine, a git pull may mess up with my local changes.
     
 git remote add origin url
-git remote -v // show the remote repo
+git remote -v // show the remote repo with verbose information (fetch and push urls)
 git push origin master
 git pull origin master
 
@@ -19,7 +19,7 @@ Describe the differences between forks, clones, and branches. When would you use
     
     forks: when I want to add new feature on an existing remote repo, I can fork it to my own remote repo first
     clones: and then clone it to my local machine and add my new feature
-    branch: when I want to make experimetal changes without affecting the master branch
+    branch: when I want to make experimental changes without affecting the master branch
     
 git fetch origin + git merge master origin/master = git pull origin master
 
@@ -37,3 +37,7 @@ When would you want to make changes in a separate branch rather than directly in
     When I want to make experimental changes, if doing it in a separate branch, it won't affect the master branch. And you can easily keep your master branch up-to-date with master of the original repository, and merge changes from master into your branch when you are ready. However, this may introduce more steps to merge my branch into the master. The typical work flow is pull changes into local master branch, merge the local master into your branch, then push your branch to the remote before finally merging your branch into master, either locally or on GitHub.
     
     Whereas, operates only on master, you can simple do pushing and pulling. However, in certain cases, you might create unwanted commits or changes on the local master branch.
+    
+Commands:
+git remote // show all remote locations for the repository
+git fetch origin // get the changes from the remote location into local master branch, not merge yet

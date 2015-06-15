@@ -12,7 +12,7 @@ What do you think are the pros and cons of manually choosing when to create a
 commit, like you do in Git, vs having versions automatically saved, like Google
 docs does?
     
-    pros: you get to decide when is appropriate to commit.
+    pros: you get to decide when is appropriate to commit. You can also specify commit messages instead of only seeing an auto commit.
     cons: you might have too big/ small commits.
 
 Why do you think some version control systems, like Git, allow saving multiple
@@ -34,3 +34,18 @@ could break something?
 Now that you have your workspace set up, what do you want to try using Git for?
 
     create a repo, branch, merge
+
+Commands:
+git clone URL
+git log (q stands for quit)
+git log --stat // show additional information about the commits
+git config --global color.ui auto // get colored diff output
+git diff ID1 ID2 (first four or more characters of the commit ID should be enough)
+git checkout commitID
+
+Git configurations:
+git config --global core.editor "'C:/Program Files/Sublime Text 2/sublime_text.exe' -n -w"
+git config --global push.default upstream
+git config --global merge.conflictstyle diff3
+// start Sublime from Git Bash, add the following line to .bash_profile
+alias subl="C:/Program\ Files/Sublime\ Text\ 2/sublime_text.exe"
